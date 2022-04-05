@@ -3,7 +3,7 @@ class UserCard extends HTMLElement {
     super();
   }
   connectedCallback() {
-    this.innerHTML = "ken lee";
+    this.innerHTML = `${this.getAttribute("name")}`;
   }
 }
 
