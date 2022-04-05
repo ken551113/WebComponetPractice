@@ -21,6 +21,11 @@
           flex:1;
           padding: 0px 10px;
         }
+
+        .info.disable{
+          display: none;
+        }
+
         .name {
           color: blue;
         }
@@ -30,13 +35,17 @@
           object-fit: cover;
           border-radius: 25px;
         }
+
       </style>
       <div class="user-card">
         <img class="avatar" src="" alt="">
         <div class="content">
           <div class="name"></div>
+          <div class="info">
           <slot name="phone"></slot>
           <slot name="email"></slot>
+        </div>
+          <button id="toggle-info">hide info</button>
         </div>
       </div>
     </div>
