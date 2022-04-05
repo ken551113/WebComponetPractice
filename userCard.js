@@ -3,7 +3,9 @@ class UserCard extends HTMLElement {
     super();
   }
   connectedCallback() {
-    this.innerHTML = `${this.getAttribute("name")}`;
+    const element = document.createElement("h3");
+    element.innerHTML = `<h3>${this.getAttribute("name")}</h3>`;
+    this.innerHTML = element.outerHTML;
   }
 }
 
