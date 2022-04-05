@@ -10,14 +10,47 @@
   <body>
     <template id="user-card">
       <style>
-        h3 {
+        .user-card{
+          display:flex;
+          padding: 20px 20px;
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+          margin-bottom: 20px;
+          border-radius: 10px;
+        }
+        .content{
+          flex:1;
+          padding: 0px 10px;
+        }
+        .name {
           color: blue;
         }
+        .avatar{
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 25px;
+        }
       </style>
-      <h3></h3>
+      <div class="user-card">
+        <img class="avatar" src="" alt="">
+        <div class="content">
+          <div class="name"></div>
+          <slot name="phone"></slot>
+          <slot name="email"></slot>
+        </div>
+      </div>
+    </div>
     </template>
-    <user-card name="ken lee"></user-card>
-    <user-card name="john cena"></user-card>
+
+    <user-card name="ken lee">
+      <div slot="phone">092313213</div>
+      <div slot="email">ken@gmail.com</div>
+    </user-card>
+    <user-card name="john cena"  avatar="https://images.chinatimes.com/newsphoto/2019-01-31/656/20190131001004.jpg">
+      <div slot="phone">112321321</div>
+      <div slot="email">john@gmail.com</div>
+    </user-card>
+
   </body>
 
   <style>

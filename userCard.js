@@ -6,9 +6,13 @@ class UserCard extends HTMLElement {
     const template = document.getElementById("user-card");
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-    this.shadowRoot.querySelector("h3").innerHTML = `${this.getAttribute(
+    this.shadowRoot.querySelector(".name").innerHTML = `${this.getAttribute(
       "name"
     )}`;
+    this.shadowRoot.querySelector(".avatar").src = `${
+      this.getAttribute("avatar") ??
+      "http://cdn.onlinewebfonts.com/svg/img_264570.png"
+    }`;
   }
 }
 
