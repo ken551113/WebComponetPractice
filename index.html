@@ -6,21 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="userCard.js"></script>
+    <script src="word.js"></script>
   </head>
   <body>
     <user-card name="ken lee">
       <div slot="phone">092313213</div>
       <div slot="email">ken@gmail.com</div>
     </user-card>
-    <user-card name="john cena"  avatar="https://images.chinatimes.com/newsphoto/2019-01-31/656/20190131001004.jpg">
+    <user-card
+      name="john cena"
+      avatar="https://images.chinatimes.com/newsphoto/2019-01-31/656/20190131001004.jpg"
+    >
       <div slot="phone">112321321</div>
       <div slot="email">john@gmail.com</div>
     </user-card>
+    <my-word content="initial text"></my-word>
+    <button onclick="changeMyWord()">change my word</button>
   </body>
 
-  <style>
-    h3 {
-      color: red;
+  <script>
+    function changeMyWord() {
+      const myWord = document.querySelector("my-word");
+      myWord.setAttribute("content", "I am changed!");
     }
-  </s>
+  </script>
 </html>
